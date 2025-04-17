@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
-import { assets, JobCategories } from '../assets/assets'
+import { assets, JobCategories, JobLocations } from '../assets/assets'
 
 const Joblisting = () => {
     const {isSearched, searchFilter,setSearchFilter} = useContext(AppContext)
@@ -33,22 +33,46 @@ const Joblisting = () => {
             )
         }
         {/* Category filter */}
-        <div>
-          <div>
-            <h4>Search by Categories</h4>
-            <ul>
+        <div className='max-lg:hidden'>
+          
+            <h4 className='font-medium text-lg py-4'>Search by Categories</h4>
+            <ul className='space-y-4 text-gray-600'>
               {
                 JobCategories.map((category,index) =>(
-                  <li key={index}>
-                    <input type="checkbox" name='' id=''/>
+                  <li className='flex gap-3 items-center' key={index}>
+                    <input className='scale-125' type="checkbox" name='' id=''/>
               {category}
                   </li>
                 ))
               }
             </ul>
-          </div>
+          
+        </div>
+        {/* Location filter */}
+        <div className='max-lg:hidden'>
+          
+            <h4 className='font-medium text-lg py-4'>Search by Location</h4>
+            <ul className='space-y-4 text-gray-600'>
+              {
+                JobLocations.map((location,index) =>(
+                  <li className='flex gap-3 items-center' key={index}>
+                    <input className='scale-125' type="checkbox" name='' id=''/>
+              {location}
+                  </li>
+                ))
+              }
+            </ul>
+          
         </div>
       </div>
+      {/* Job listings */}
+      <section className='w-full lg:w-3/4 to-gray-800 max-lg:px-4'>
+        <h3 className='font-medium text-3xl py-2' id='job-list'>Latest jobs</h3>
+        <p className='mb-8'>Get your desired job from top companies</p>
+        <div className='grid grid-cols-1 sm:'>
+
+        </div>
+      </section>
     </div>
   )
 }
