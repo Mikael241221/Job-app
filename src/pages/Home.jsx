@@ -2,6 +2,8 @@ import React from 'react'
 import Hero from '../components/Hero'
 import Navbar from '../components/Navbar'
 import Joblisting from '../components/Joblisting'
+import AppDownload from '../components/AppDownload'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -9,6 +11,8 @@ const Home = () => {
       <Navbar/>
       <Hero/>
       <Joblisting/>
+      <AppDownload/>
+      <Footer/>
     </div>
   )
 }
